@@ -1,11 +1,20 @@
 exports.config = {
-  user: 'BROWSERSTACK_USERNAME',
-  key: 'BROWSERSTACK_ACCESS_KEY',
   server: 'hub-cloud.browserstack.com',
-
+  "userName" : "rutvikchandla_2MEern",
+  "accessKey" : "AXHzyg34Qr81Nep231pu",
   commonCapabilities: {
-    name: "parallel_test",
-    build: "cucumber-js-browserstack"
+    'bstack:options' : {
+      "os" : "OS X",
+      "osVersion" : "Sierra",
+      "buildName" : "Final-Snippet-Test",
+      "sessionName" : "Selenium-4 cucumber parallel snippet test",
+      "local" : "false",
+      "seleniumVersion" : "4.0.0",
+      "userName" : "",
+      "accessKey" : "",
+    },
+    "browserName" : "Chrome",
+    "browserVersion" : "latest",
   },
 
   capabilities: [{
@@ -14,10 +23,6 @@ exports.config = {
     browserName: 'firefox'
   },{
     browserName: 'safari',
-    browserVersion: '12'
-  },{
-    browserName: 'internet explorer',
-    browserVersion: '11'
   }]
 }
 

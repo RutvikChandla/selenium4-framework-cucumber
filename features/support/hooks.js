@@ -6,9 +6,6 @@ var browserstack = require('browserstack-local');
 var config_file = '../../conf/' + (process.env.CONFIG_FILE || 'single') + '.conf.js';
 var config = require(config_file).config;
 
-var username = process.env.BROWSERSTACK_USERNAME || config.user;
-var accessKey = process.env.BROWSERSTACK_ACCESS_KEY || config.key;
-
 var createBrowserStackSession = function(config, caps){
   return new webdriver.Builder().
     usingServer('http://'+config.server+'/wd/hub').
@@ -23,8 +20,6 @@ var myHooks = function () {
     var world = this;
     var task_id = parseInt(process.env.TASK_ID || 0);
     var caps = config.capabilities[task_id];
-    caps['browserstack.user'] = username;
-    caps['browserstack.key'] = accessKey;
 
     if(caps["browserstack.local"]){
       // Code to start browserstack local before start of test and stop browserstack local after end of test

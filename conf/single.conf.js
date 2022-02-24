@@ -1,11 +1,18 @@
 exports.config = {
-  user: 'BROWSERSTACK_USERNAME',
-  key: 'BROWSERSTACK_ACCESS_KEY',
   server: 'hub-cloud.browserstack.com',
 
   capabilities: [{
-    browserName: 'chrome',
-    name: "single_test",
-    build: "cucumber-js-browserstack"
+    'bstack:options' : {
+      "os" : "OS X",
+      "osVersion" : "Sierra",
+      "buildName" : "Final-Snippet-Test",
+      "sessionName" : "Selenium-4 cucumber single snippet test",
+      "local" : "false",
+      "seleniumVersion" : "4.0.0",
+      "userName" : "",
+      "accessKey" : "",
+    },
+    "browserName" : "Chrome",
+    "browserVersion" : "latest",
   }]
 }
